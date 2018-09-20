@@ -1,16 +1,8 @@
 .card {
     display: inline-block;
     width: 200px;
-    border: 1px solid black;
     margin: 20px;
-    border-radius: 5px;
     padding: 5px;
-    background-color: #527952;
-}
-
-.card:hover {
-    transform: scale(1.2);
-    transition-duration: 1s;
 }
 
 .card__img {
