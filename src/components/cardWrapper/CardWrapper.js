@@ -49,11 +49,10 @@ class CardWrapper extends Component {
 
     renderCards () {
         const json = this.filterCards();
-        const length = json.length;
-        const arr = [];
-        for(let i = 0; i < length; i++) {
-            arr.push(<Card data={json[i]} key={i}/>);
-        }
+        let arr = [];
+        arr = json.map((item, i) => {
+            return <Card data={item} key={i}/>
+        });
         return arr;
     }
 
@@ -63,9 +62,7 @@ class CardWrapper extends Component {
         let newJson;
 
         newJson = json.filter(function(item) {
-            if (item.firstName.indexOf(text) > -1 || item.lastName.indexOf(text) > -1) {
-                return true;
-            }
+            if (item.firstName.toLowerCase().includes(text) || item.lastName.toLowerCase().includes(text)) return true;
         });
 
         if (newJson.length) {

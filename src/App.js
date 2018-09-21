@@ -16,10 +16,9 @@ class App extends Component {
   }
 
   inputHandler(e) {
-      const input = document.querySelector('search-panel');
       let value = e.target.value;
       this.setState({
-        searchText: value || null
+        searchText: value
       });
   }
 
